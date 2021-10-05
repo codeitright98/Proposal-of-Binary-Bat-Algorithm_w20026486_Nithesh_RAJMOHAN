@@ -1,0 +1,424 @@
+﻿Professor Supervision notes
+
+
+Date: 19/03/2021
+
+
+His background?
+  BSc biomedical engineering
+  eight months job in ML
+  Python
+  Java - learned at Northumbria
+  MSc in AI
+
+
+Summarise my background
+
+
+Tell me more about the potential project?
+  Deep Learning in Alzheimer’s Disease: Diagnostic Classification and Prognostic Prediction Using Neuroimaging Data
+  mentioned that he cannot find a research gap
+
+
+How committed is he to proposed project?
+
+
+Mention possible projects
+  bat algorithm (for combinatorial optimisation)
+  GP implementation in C++ for PPEC (Futoshiki?)
+  texture classification
+    Texture classification through a genetic programming approach incorporating pre-existing texture operators
+
+
+Bat Algorithm:
+  A new metaheuristic bat-inspired algorithm (1004.4170).pdf
+  BA Literature Review and Applications (1308.3900).pdf
+  CoGPI 2012 (06382769).pdf
+  IJBIC_bat_review_53924_final.pdf
+  1408.5348v1.pdf
+  pwtsai_AMM_Bat_Algorithm_Inspired_Algorithm_for_Solving_Numerical_Optimization_Problems.pdf
+  batengcomp-140821071002-phpapp01.pdf
+  VNBA.pdf
+
+
+Roadmap for Assign 1
+  submission deadline now 29 March
+
+
+Before next time (by late Wed): 
+  background, motivation, relevance
+    eight papers I have shared
+  research question, aims, objectives, task list, risk assessment, Gantt
+    compare and clarify different variants of the continuous bat algorithm
+    select a definitive variant after testing on benchmark problems
+    develop a general binary bat algorithm for combinatorial optimisation
+    validate and compare its performance on known benchmark comb opt problems
+      including perhaps comparison with say genetic algorithms
+  ethics, legal, social etc
+
+
+Next meeting: 2:00-2:55pm on Fri 26 Mar
+
+
+Date: 01/06/2021
+
+
+Project proposal
+  feedback
+  looked through the feedback on the proposal informally
+
+
+I will need to set up a GitHub repository with existing BA code
+  use Northumbria email address for Nithesh
+
+
+Before next meeting:
+  submit ethics online application
+  partial draft literature review
+    identify all existing variants of the unmodified continuous BA
+  study the existing BA code from the repository
+
+
+Nithesh is considering porting to Python to better understand the code
+
+
+It is important to time when draft chapters are submitted for comment to avoid long delays because of supervisor Annual Leave or other absences
+
+
+Supervisor availability:
+  IEEE CEC conf 28 Jun - 1 Jul
+  holiday 10-25 July; 31 July - 15 Aug; 23 - 30 Aug
+
+
+Next meeting: 4:30-4:55pm Tue 8 Jun
+
+
+Date: 08/06/2021
+Github repository
+  did he accept invite?
+  yes, has set up Nithesh_ba branch
+  i will try and port the applet code to an application
+
+
+Ethics Online application
+  problem accessing the system from Nithesh's laptop
+  raise an IT ticket
+  but, in parallel, try from uni lab machine
+
+
+For this meeting:
+  submit ethics online application
+  partial draft literature review
+    identify all existing variants of the unmodified continuous BA
+    didn't manage to work on this as LA on assignment to 4 Jun
+  study the existing BA code from the repository
+
+
+Spent some time looking at Swarm, Bat and Eval classes
+
+
+Before next meeting:
+  submit ethics online application
+  partial draft literature review
+  study the existing BA code from the repository
+
+
+Supervisor availability:
+  IEEE CEC conf 28 Jun - 1 Jul
+  holiday 10-25 July; 31 July - 15 Aug; 23 - 30 Aug
+
+
+Next meeting: 4:30-4:55pm Tue 15 Jun
+
+
+Date: 15/06/2021
+I have been v busy with marking
+
+
+Github BA code
+  I need to port to Java application
+
+
+Lit reviw
+  will be a substantial part, say 20% of the report
+  your draft will need to be several pages long to match this
+  use Harvard citation style:
+    ... a wonderful paper (Sinclair, 2020)
+    Sinclair astounded me by his insight (2020)
+  include references at end of draft lit review
+
+
+Ethics Online application done (14 Jun)
+  approved
+
+
+Nithesh has been porting my Java code across to Python
+  generating graph on mean and best bat
+  using matplotlib, seaborn
+    https://seaborn.pydata.org/
+  currently researching swarm visualisation packages
+
+
+For this meeting:
+  submit ethics online application
+  partial draft literature review
+    has drafted this, and gave it to me in the meeting
+    only one page
+  study the existing BA code from the repository
+
+
+Before next time:
+  partial draft lit review with references (by late Mon)
+  continue to work on the Python port
+  start identifying variants of the canonical continuous BA algorithm
+
+
+Supervisor availability:
+  IEEE CEC conf 28 Jun - 1 Jul
+  holiday 10-25 July; 31 July - 15 Aug; 23 - 30 Aug
+
+
+Next meeting: 3:00-3:25pm Tue 22 Jun
+
+
+Date: 25/06/2021
+GitHub BA Java code
+  ported to AWT application
+
+
+Spent some time looking at my Java code and comparing options in the various papers
+
+
+For this meeting:
+  partial draft lit review with references (by late Mon)
+    haven't managed to complete draft yet
+    maybe a couple more days
+  continue to work on the Python port
+    has found a third-party library for bat algorithm
+    please keep me informed as negotiations proceed
+  start identifying variants of the canonical continuous BA algorithm
+
+
+Before next time:
+  full draft literature review
+  code for the continuous BA
+    allows switching between algorithms
+    all the algorithms must be carefully matched to papers
+    apply the algorithms to a set of benchmarks
+    be careful - there may be too many variants to deal with all in detail
+
+
+Supervisor availability:
+  IEEE CEC conf 28 Jun - 1 Jul
+  holiday 10-25 July; 31 July - 15 Aug; 23 - 30 Aug
+
+
+Next meeting: 3:00-3:25pm Fri 9 Jul
+
+
+Date: 27/07/2021 
+
+
+Supervision postponed from 9 Jul
+
+
+Has had covid
+  lost two weeks to ill health
+  back working on project
+
+
+Nothing received prior to meeting
+
+
+How did the interviews go on 9 Jul?
+  waiting on outcome for all three
+  has some more interviews this week
+
+
+How has he been getting on?
+  writing?
+    working on literature review
+    sent me a draft; much improved but not complete
+    I will comment on the draft
+  coding?
+    hasn't been able to make any progress on this
+
+
+Is he still coding in python?
+  does he plan to complete work in python?
+    will switch back to Java
+  can I have access to his GitHub repository?
+    open access: https://github.com/codeitright98/Bat-Optimization-Algorithm
+
+
+How is the scope?
+  could cut binary BA if necessary
+  focus on comparison of continuous BA
+  make decision at next superv (18 Aug)
+
+
+For this meeting:
+  full draft literature review
+  code for the continuous BA
+    allows switching between algorithms
+    all the algorithms must be carefully matched to papers
+    apply the algorithms to a set of benchmarks
+    be careful - there may be too many variants to deal with all in detail
+
+
+Before next time:
+apply for an LA
+  code for the continuous BA
+    allows switching between algorithms
+    all the algorithms must be carefully matched to papers
+    apply the algorithms to a set of benchmarks
+    be careful - there may be too many variants to deal with all in detail
+draft chapter on continuous
+methodology, analysis & discussion
+
+
+Submission date:
+  16 Sep
+  will he apply for LA?
+    he should, given the illness - try for two weeks' LA
+  some people have been denied for general applications
+  LA prob more use than PEC, but apply for PEC if LA denied
+
+
+Supervisor availability:
+  holiday 31 July - 15 Aug; 23 - 30 Aug
+  future supervisions: 18 Aug; circa 1 Sep; circa 9 Sep
+    if an LA is granted, will be at least one more supervision
+  must get chapters in time to give comments so you can revise
+  need a plan for when chapters will come in
+    introduction
+    lit review
+    methodology
+    analysis & discussion
+    conclusion & further work
+alternative, put the continuous and binary BAs in separate chapters, each of which contains methodology, analysis & discussion
+
+
+Next meeting: 2:00-2:25pm on Wed 18 Aug (Mon and Tue looking too busy)
+
+
+Date: 03/09/2021
+
+
+Supervision postponed from 18 Aug
+
+
+How are you? How was trip to India?
+  spent one week in India
+
+
+Have you applied for LA/PEC?
+  any outcome?
+  LA - needed PL approval, and received it
+  will receive the new date in the coming week via student portal
+  delayed submission will probably result in a delay to the confirmation of the degree
+  still waiting for a response to the PEC
+
+
+How is the project progressing?
+  email on 18 Aug
+    finished coding & methodology on continuous BA
+    finished coding & methodology on binary BA
+
+
+Discuss how to present results
+  multiple (10) runs
+  only vary one aspect
+  compare mean and best
+  do significance testing
+  pairwise sign testing
+    https://en.wikipedia.org/wiki/Sign_test
+Nithesh is familiar with SPSS - good choice for significance testing
+
+
+When can I expect to see more draft material?
+  only seen and commented on 5 pages of lit review
+  Nithesh will send some additional chapters for comment by the end of today
+
+
+Before next time:
+  try and send additional material for comment by end of Wed 8 Sep
+
+
+Next meeting: 11:30-11:55am on Fri 10 Sep
+
+
+Date: 16/09/2021
+
+
+Comments returned on two drafts prior to meeting
+  plagiarism problem with methodology
+  Nithesh says that he sent the file by mistake, and it was copied from a PhD that he found on the internet
+  I reiterated the importance of doing his own work for the project report, and also the use of Turnitin for plagiarism detection
+
+
+I need to see methodology and results
+  for the continuous BA, need a methodology that presents the base equations for BA, then shows, against citations, the distinct variants
+  each needs to be clearly labelled (given a name) and the differences expressed as equations and ideally diagrams
+  the methodology needs to introduce the selected benchmarks (from cited papers); give them as descriptions, equations, and diagrams
+  then in the results, apply the different variants to benchmark problems and show what differences if any there are between the approaches with statistical significance analysis (best, mean, statistical significance)
+
+
+Before next meeting (by 22 Sep at latest):
+  draft methodology for continuous BA including variants and benchmarks (equations, diagrams)
+
+
+Submission
+  formal submission 30 Sep
+  Nithesh has been told he will get an extra two weeks on this (14 Oct)
+
+
+Next meeting: 11:30-11:55am on Thu 23 Sep
+
+
+Date: 23/09/2021
+
+
+Nothing received before the meeting
+latest methodology draft received by Teams chat
+
+
+Submission
+  Nithesh will presumably be aiming for 14 Oct
+  Nithesh will in fact be expected to submit on 30 Sep with the rest of the cohort
+  He will aim to meet the deadline
+
+
+Viva:
+  First 30 mins is student; 15 mins presentation; 15 mins Q&A
+  15 mins for examiners at the end
+   For presentation: PowerPoint - high-level, interesting overview
+   assume we have read the report: what are the best bits the interesting bits
+    this is a sales pitch!
+    make sure to rehearse it
+    do not go over time
+    Q&A will be mainly second examiner
+Second examiner: Ahmed Bouridane
+possibly w/c 4 Oct, more likely w/c 11 Oct
+
+
+Drafts so far
+literature Review - comments given
+methodology for continuous BA
+still missing: abstract, introduction, results on continuous , discussion/evaluation, conclusions and further work
+maybe not including: methodology for binary, results for binary
+consider leaving out binary BA from both methodology and results if necessary - you must complete the work you have done and write it up well
+partially complete binary should stay in lit review, and be written up as incomplete in discussion/evaluation and future work - talk about your own experimental work and link the ideas to the literature
+it is in your interest to give me drafts of all chapters for comment, but I need time to turn these round ... give them to me as early as possible
+
+
+Need to submit an evidence folder - cloud-based folder that you send the link to both examiners - readme file (briefly describe what is included in each folder), folder with emails with my project supervision notes, links to the GitHub repositories, raw experimental results
+
+
+Advise making the draft submission a couple of days before the real one to check the Turnitin score
+
+
+Aiming for a full draft by Saturday.
+
+
+This will be our last supervision
