@@ -4,3 +4,6 @@ The benchmark functions folders consist of 5 unique mathematical benchmark funct
 
 The experimental code folder consists of the codes of the experiments conducted in the dissertation
 
+
+The result folder consists of the experimental results
+
