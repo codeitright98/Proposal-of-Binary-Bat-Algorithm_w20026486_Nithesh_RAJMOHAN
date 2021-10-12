@@ -1,1 +1,168 @@
 
+function [bestba, globalba]= B_A(Parameters, Observation, Maximum_iterations)
+%% initiate
+if nargin<1
+    help B_A
+    Parameters= [50, 0, 5, 1, 0.995, 0.9, 0.02, 0];
+    Observation= [10, 5, 0, 50];
+    Maximum_iterations= 240;
+end
+ %% Variables
+Swarm_size= Parameters(1);        
+low_Frequency= Parameters(2);   
+High_Frequency= Parameters(3);   
+initial_loudness= Parameters(4);   
+loudness_coe_alpha= Parameters(5);  
+initial_emission= Parameters(6);  
+emission_coe_gamma= Parameters(7);            
+initial_bat_velocity= Parameters(8);            
+%% Initializing Data
+Rows= Observation(1);               
+Columns= Observation(2);               
+num_cells= Rows*Columns;   
+least_value= Observation(3);               
+highest_value= Observation(4);              
+lower_boundary= least_value*ones(Rows, Columns);   
+upper_boundary= highest_value*ones(Rows, Columns);   
+ 
+Observation= lower_boundary + rand(Rows, Columns).* (upper_boundary-lower_boundary) ;
+%%  Defined Objective Function
+obj_function= @(x) 100*sqrt(sum(sum((Observation - x).^2))/num_cells)/(max(max(Observation)) - min(min(Observation)));
+%% initialization
+tic 
+swarm.pos= [];
+swarm.Frequency= [];
+swarm.cost= [];
+swarm.velocity= [];
+ 
+bats= repmat(swarm, Swarm_size, 1);
+for i=1:Swarm_size
+    
+    bats(i).pos= lower_boundary+rand(Rows, Columns).*(upper_boundary-lower_boundary);
+    
+   
+    bats(i).cost= obj_function(bats(i).pos);
+    
+    
+    bats(i).velocity= initial_bat_velocity.*ones(Rows, Columns);
+    
+    
+    bats(i).Frequency= 0.*ones(Rows, Columns);
+end
+ 
+bestba= bats;     
+[~, index]= min([bestba.cost]);
+ 
+globalba= bats(index);
+ 
+Aerage= mean([bats.cost]); 
+best_ba= globalba.cost;
+iteration= 1;                
+final_Loudness= (loudness_coe_alpha*initial_loudness)^Maximum_iterations;
+loudvector= initial_loudness;
+ 
+emi= initial_emission;
+for ii=1:Maximum_iterations
+    emi= [emi (initial_emission*(1-exp(-emission_coe_gamma*iteration)))^Maximum_iterations];
+end
+ 
+emissionvector= initial_emission;
+ 
+ 
+while iteration<Maximum_iterations
+    
+    
+    emission_rate= initial_emission*(1-exp(-emission_coe_gamma*iteration));
+    initial_loudness= loudness_coe_alpha*initial_loudness;
+    
+    for i=1:Swarm_size
+        
+        
+        bats(i).Pulse_Frequency= low_Frequency+(High_Frequency - low_Frequency)*rand;
+        
+       
+        bats(i).velocity= bats(i).velocity + (bats(i).pos - globalba(iteration).pos) * bats(i).Pulse_Frequency;
+        
+       
+        bats(i).pos= bats(i).pos + bats(i).velocity;
+        
+        
+        if rand<emission_rate
+            eps= 0.1;
+            bats(i).pos= globalba(iteration).pos+eps*randn(size(Observation))*initial_loudness;
+        end
+        
+       
+        Upperbound= bats(i).pos >= upper_boundary;            
+        bats(i).pos(Upperbound)= upper_boundary(Upperbound);      
+        
+        Downbound= bats(i).pos <= lower_boundary;           
+        bats(i).pos(Downbound)= lower_boundary(Downbound);  
+        
+        
+        bats(i).cost= obj_function(bats(i).pos);
+        
+        if ((bats(i).cost<=bestba(i).cost) && (rand>initial_loudness))
+            bestba(i)= bats(i);
+        end
+    end  
+    
+    iteration= iteration+1;
+    
+   
+    [~, index]= min([bestba.cost]);
+    globalba(iteration)= bestba(index);
+    best_ba(iteration)= globalba(iteration).cost;
+    
+   
+    Aerage(iteration)= mean([bats.cost]);
+    loudvector= [loudvector initial_loudness];
+    emissionvector= [emissionvector emission_rate];
+    disp([ 't= ' num2str(iteration), ',   emi_rate= ' num2str(emission_rate), ',  Loudness= ' num2str(initial_loudness), ',   BEST= ' num2str(best_ba(iteration))]);
+    figure(1);
+    subplot(2, 3, 1); imagesc(Observation, [0 highest_value]); colormap(flipud(hsv));
+    title('Data', 'FontSize', 10);
+    subplot(2, 3, 2); imagesc(globalba(iteration).pos, [0 highest_value]);colormap(flipud(parula));
+    title({'Best Sol'; ['NRMSE_function= ', num2str(best_ba(iteration), 4),'%']; ['total_iteration= ', num2str(iteration)]}, 'FontSize', 10);
+    subplot(2, 3, 3); imagesc(100*(abs(globalba(iteration).pos - Observation))/(max(max(Observation)- min(min(Observation)))), [0 100]);colormap(flipud(parula));
+    colorbar;
+    title('N_error %', 'FontSize', 10);
+    subplot(2, 3, [4 4.4]); plot(1:iteration, loudvector);
+    axis([0 Maximum_iterations final_Loudness Parameters(4)]);
+    title(['Loudness_value= ' num2str(initial_loudness)], 'FontSize', 10);
+    xlabel('Iters'); ylabel('Loudness')
+    grid
+    hold on
+    scatter(iteration, loudvector(end));
+    hold off
+    subplot(2, 3, [5.5 6]); plot(1:iteration, emissionvector);
+    axis([0 Maximum_iterations 0 max(emi)]);
+    title(['Emission= ' num2str(emission_rate)], 'FontSize', 10);
+    xlabel('Iteration'); ylabel('Emission')
+    grid;
+    hold on
+    scatter(iteration, emissionvector(end));
+    hold off
+    drawnow;
+    
+    if globalba(iteration).cost<0.5
+        
+    end
+    
+end
+ 
+disp('======================================');
+disp([' Time  '  num2str(toc)]);
+figure;
+subplot(1, 2, 1); plot(1:iteration, best_ba, 'b', 'Linewidth', 1);
+title('Globalbestvalue')
+xlabel('iters');
+ylabel('NRMSEvalue(%)');
+legend('best_sol');
+grid on
+subplot(1, 2, 2); plot(1:iteration, Aerage, 'r');
+title('Average NRMSE_value of Bats')
+xlabel('iters');
+ylabel('NRMSEvalue(%)');
+legend('Average NRMSEvalue');
+grid on;
